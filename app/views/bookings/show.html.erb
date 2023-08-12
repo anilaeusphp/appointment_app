@@ -1,0 +1,12 @@
+<h2>Welcome to the booking for <%= @booking.room.name %></h2>
+
+    <%= @booking.start %>
+    <br />
+    <%= @booking.end %>
+    <br />
+    <%= @booking.purpose %>
+    <br />
+    <%= @booking.room.name %>
+
+<br/>
+<%= link_to "All Bookings", bookings_path %>

@@ -1,0 +1,9 @@
+<% @rooms.each do |room| %>
+    <div>
+        <%= link_to room.name, room %>
+        <%= button_to "Destroy", room, method: :delete, data: { turbo_confirm: "Are you certain to delete the room?" } %>
+        <br />
+    </div>
+<% end %>
+
+<%= link_to "Create new Room", new_room_path %>

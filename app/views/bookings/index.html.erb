@@ -1,0 +1,13 @@
+<h2>List of Bookings</h2>
+<%= link_to "Create a Booking" , new_booking_path %>
+<% @bookings.each do |booking| %>
+    <%= booking.start %>
+    <br />
+    <%= booking.end %>
+    <br />
+    <%= booking.purpose %>
+    <br />
+    <%= booking.room.name %>
+    <%= link_to "Edit", edit_booking_path(booking) %>
+    <%= button_to "Destroy", booking, method: :delete %>
+<% end %>

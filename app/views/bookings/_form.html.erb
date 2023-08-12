@@ -1,0 +1,24 @@
+<%= form_with model: booking do |form| %>
+    <div>
+        <div>
+            <%= form.label :start %>
+            <%= form.datetime_field :start %>
+        </div>
+        <div>
+            <%= form.label :end %>
+            <%= form.datetime_field :end %>
+        </div>
+        <div>
+            <%= form.label :purpose %>
+            <%= form.text_field :purpose %>
+        </div>
+        <div>
+            <%= form.label :room %>
+            <%= form.collection_select :room_id, Room.all, :id, :name %>
+        </div>
+        <div>
+            <%= form.submit %>
+        </div>
+    </div>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+<% end %>

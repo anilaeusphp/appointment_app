@@ -1,0 +1,19 @@
+<%= form_with model: room do |form|  %>
+    <% if room.errors.any? %>
+    <div>
+        <% room.errors.each do |error| %>
+            <div><%= error.full_message %></div>
+        <% end %>
+    </div>
+
+    <% end %>
+    <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    </div>
+    <div>
+    <%= form.label :capacity %>
+    <%= form.number_field :capacity %>
+    </div>
+    <%= form.submit %>
+<% end %>
